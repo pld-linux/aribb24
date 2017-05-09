@@ -1,0 +1,28 @@
+--- aribb24-1.0.3/configure.ac.orig	2014-08-18 17:29:48.000000000 +0200
++++ aribb24-1.0.3/configure.ac	2017-05-09 17:28:33.742765331 +0200
+@@ -19,7 +19,7 @@
+   pkg_requires="libpng"
+ ], [])
+ 
+-AC_SUBST([PKG_REQUIRES], [$(test x$enable_shared = xno && echo ${pkg_requires})])
++AC_SUBST([PKG_REQUIRES], [${pkg_requires}])
+ 
+ AC_CHECK_FUNCS([vasprintf])
+ 
+--- aribb24-1.0.3/src/aribb24.pc.in.orig	2014-08-18 17:29:48.000000000 +0200
++++ aribb24-1.0.3/src/aribb24.pc.in	2017-05-09 17:29:39.376097922 +0200
+@@ -5,13 +5,10 @@
+ libdir=@libdir@
+ datadir=@datadir@
+ pkgincludedir=@includedir@/@PACKAGE@
+-pkgdatadir=${datadir}/@PACKAGE@
+-pkglibdir=${libdir}/@PACKAGE@
+-pluginsdir=${pkglibdir}/plugins
+ 
+ Name: ARIB B24 Library
+ Description: ARIB B24 Captions decoder
+ Version: @VERSION@
+-Requires: @PKG_REQUIRES@
++Requires.private: @PKG_REQUIRES@
+ Cflags: -I${includedir}
+ Libs: -L${libdir} -laribb24
