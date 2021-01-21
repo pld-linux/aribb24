@@ -13,6 +13,7 @@ Group:		Libraries
 Source0:	https://github.com/nkoriyama/aribb24/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	5ef0a6d1d72f294666ee1489b7ebb8c5
 Patch0:		%{name}-pc.patch
+Patch1:		link-libm.patch
 URL:		https://github.com/nkoriyama/aribb24
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
@@ -57,6 +58,7 @@ Statyczna biblioteka ARIB STD-B24.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
