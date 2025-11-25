@@ -6,7 +6,7 @@ Summary:	ARIB STD-B24 library
 Summary(pl.UTF-8):	Biblioteka ARIB STD-B24
 Name:		aribb24
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/nkoriyama/aribb24/releases
